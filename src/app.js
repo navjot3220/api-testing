@@ -88,7 +88,7 @@ app.use((req, res) => {
 
 app.use((error, req, res, next) => {
   if (error instanceof SyntaxError && error.status === 400 && "body" in error) {
-    return res.status(400).json({ error: "Request body must be a valid JSON." });
+    return res.status(400).json({ error: "Request body must be a valid JSON..." });
   }
   next(error);
 });
